@@ -113,9 +113,9 @@ function renderGame() {
 
 function renderMissions(missions) {
     const row = document.getElementById("missions-row");
-    row.innerHTML = "";
+    row.innerHTML = '<div class="missions-label">Missions</div>';
     if (missions.length === 0) {
-        row.innerHTML = '<div class="mission-card" style="opacity:0.5">No missions remaining</div>';
+        row.innerHTML += '<div class="mission-card" style="opacity:0.5">No missions remaining</div>';
         return;
     }
     missions.forEach(m => {
@@ -187,17 +187,18 @@ function renderAuctionArea(s) {
     if (s.auction_card) {
         const ac = s.auction_card;
         const typeClass = ac.type.toLowerCase();
-        let amountText = "";
+        let cardLabel = "";
         if (ac.type === "Treasure") {
-            amountText = `×${ac.amount}`;
-        } else {
-            amountText = `${ac.amount}`;
+            cardLabel = `Auction ${ac.amount} Gem${ac.amount > 1 ? "s" : ""}`;
+        } else if (ac.type === "Loan") {
+            cardLabel = `Loan ${ac.amount} coins`;
+        } else if (ac.type === "Invest") {
+            cardLabel = `Invest ${ac.amount} coins`;
         }
 
         html += `
             <div class="auction-card-display ${typeClass}">
-                <div class="auction-card-type">${ac.type}</div>
-                <div class="auction-card-amount">${amountText}</div>
+                <div class="auction-card-label">${cardLabel}</div>
             </div>
         `;
     }
@@ -239,29 +240,23 @@ function renderRoundLog(s) {
     const winnerName = names[lr.winner_player_no];
     const isHumanWin = lr.winner_player_no === 0;
 
-    let bidsHtml = lr.bids.map((b, i) => {
-        const isWinner = i === lr.winner_player_no;
-        return `<span class="log-bid ${isWinner ? 'log-bid-winner' : ''}">${names[i]}: <strong>${b}</strong></span>`;
-    }).join("");
+    const bidsStr = names.map((n, i) => {
+        const cls = i === lr.winner_player_no ? 'log-bid-winner' : 'log-bid';
+        return `<span class="${cls}">${n}: <strong>${lr.bids[i]}</strong></span>`;
+    }).join(" · ");
 
-    let extrasHtml = "";
+    let extras = "";
     if (lr.gems_collected && lr.gems_collected.length > 0) {
-        const gemChips = lr.gems_collected.map(g =>
+        const chips = lr.gems_collected.map(g =>
             `<span class="log-gem-chip ${GEM_COLORS[g] || ''}">${g}</span>`
         ).join(" ");
-        extrasHtml += `<div class="log-extra">${winnerName} collected ${gemChips}</div>`;
+        extras += ` — ${winnerName} collected ${chips}`;
     }
     if (lr.missions_completed && lr.missions_completed.length > 0) {
-        lr.missions_completed.forEach(m => {
-            extrasHtml += `<div class="log-extra log-mission">Mission completed: ${m}</div>`;
-        });
+        extras += ` — <span class="log-mission">Mission completed: ${lr.missions_completed[0]}</span>`;
     }
 
-    el.innerHTML = `
-        <div class="log-winner ${isHumanWin ? 'log-winner-you' : ''}">${winnerName} won with ${lr.winning_bid} coins</div>
-        <div class="log-bids">${bidsHtml}</div>
-        ${extrasHtml}
-    `;
+    el.innerHTML = `<span class="${isHumanWin ? 'log-winner-you' : ''}">${winnerName} won (${lr.winning_bid})</span> · ${bidsStr}${extras}`;
 }
 
 /* ── Opponent Panels ── */

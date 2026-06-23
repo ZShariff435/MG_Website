@@ -9,7 +9,6 @@ body {
     background: #0f1a0f;
     color: #d4c9a8;
     min-height: 100vh;
-    overflow: hidden;
 }
 
 .screen {
@@ -305,6 +304,16 @@ body {
     flex-shrink: 0;
 }
 
+.missions-label {
+    width: 100%;
+    text-align: center;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #5a6a4a;
+    font-weight: 600;
+}
+
 .mission-card {
     background: linear-gradient(180deg, #2a3520, #1e2a1a);
     border: 1px solid #4a5a3a;
@@ -482,15 +491,9 @@ body {
     border: 1px solid #2a8a6a;
 }
 
-.auction-card-type {
-    font-size: 0.75rem;
+.auction-card-label {
+    font-size: 0.9rem;
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-.auction-card-amount {
-    font-size: 1.1rem;
-    font-weight: 800;
 }
 
 .bid-controls {
@@ -557,30 +560,21 @@ body {
 .round-log {
     background: linear-gradient(180deg, #1a2a1a, #152215);
     border: 1px solid #4a5a3a;
-    border-radius: 8px;
-    padding: 0.4rem 0.75rem;
+    border-radius: 6px;
+    padding: 0.3rem 0.6rem;
     text-align: center;
     flex-shrink: 0;
+    font-size: 0.75rem;
+    color: #a0b090;
+    line-height: 1.4;
 }
 .round-log:empty {
     display: none;
 }
 
-.log-winner {
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: #d4c9a8;
-    margin-bottom: 0.15rem;
-}
 .log-winner-you {
     color: #f5d76e;
-}
-
-.log-bids {
-    display: flex;
-    justify-content: center;
-    gap: 0.75rem;
-    font-size: 0.75rem;
+    font-weight: 700;
 }
 .log-bid {
     color: #6a7a5a;
@@ -594,19 +588,8 @@ body {
 .log-bid-winner strong {
     color: #f5d76e;
 }
-
-.log-extra {
-    text-align: center;
-    font-size: 0.7rem;
-    color: #a0b090;
-    margin-top: 0.15rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.25rem;
-}
 .log-gem-chip {
-    font-size: 0.55rem;
+    font-size: 0.6rem;
     font-weight: 700;
     padding: 1px 4px;
     border-radius: 3px;
