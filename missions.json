@@ -1,0 +1,182 @@
+[
+    {
+        "mission_type": "same",
+        "payout": 5,
+        "gem_list": null,
+        "gem_count": 2
+    },
+    {
+        "mission_type": "same",
+        "payout": 10,
+        "gem_list": null,
+        "gem_count": 3
+    },
+    {
+        "mission_type": "different",
+        "payout": 5,
+        "gem_list": null,
+        "gem_count": 3
+    },
+    {
+        "mission_type": "different",
+        "payout": 10,
+        "gem_list": null,
+        "gem_count": 4
+    },
+    {
+        "mission_type": "pairs",
+        "payout": 15,
+        "gem_list": null,
+        "gem_count": 2
+    },
+    {
+        "mission_type": "specific",
+        "payout": 10,
+        "gem_list": ["Blue", "Green", "Purple"],
+        "gem_count": null
+    },
+    {
+        "mission_type": "specific",
+        "payout": 10,
+        "gem_list": ["Blue", "Green", "Yellow"],
+        "gem_count": null
+    },
+    {
+        "mission_type": "specific",
+        "payout": 10,
+        "gem_list": ["Blue", "Green", "Pink"],
+        "gem_count": null
+    },
+    {
+        "mission_type": "specific",
+        "payout": 10,
+        "gem_list": ["Blue", "Purple", "Yellow"],
+        "gem_count": null
+    },
+    {
+        "mission_type": "specific",
+        "payout": 10,
+        "gem_list": ["Blue", "Purple", "Pink"],
+        "gem_count": null
+    },
+    {
+        "mission_type": "specific",
+        "payout": 10,
+        "gem_list": ["Blue", "Yellow", "Pink"],
+        "gem_count": null
+    },
+    {
+        "mission_type": "specific",
+        "payout": 10,
+        "gem_list": ["Purple", "Green", "Yellow"],
+        "gem_count": null
+    },
+    {
+        "mission_type": "specific",
+        "payout": 10,
+        "gem_list": ["Purple", "Green", "Pink"],
+        "gem_count": null
+    },
+    {
+        "mission_type": "specific",
+        "payout": 10,
+        "gem_list": ["Yellow", "Green", "Pink"],
+        "gem_count": null
+    },
+    {
+        "mission_type": "specific",
+        "payout": 10,
+        "gem_list": ["Purple", "Yellow", "Pink"],
+        "gem_count": null
+    },
+    {
+        "mission_type": "specific",
+        "payout": 5,
+        "gem_list": ["Blue", "Green"],
+        "gem_count": null
+    },
+    {
+        "mission_type": "specific",
+        "payout": 5,
+        "gem_list": ["Blue", "Purple"],
+        "gem_count": null
+    },
+    {
+        "mission_type": "specific",
+        "payout": 5,
+        "gem_list": ["Blue", "Yellow"],
+        "gem_count": null
+    },
+    {
+        "mission_type": "specific",
+        "payout": 5,
+        "gem_list": ["Blue", "Pink"],
+        "gem_count": null
+    },
+    {
+        "mission_type": "specific",
+        "payout": 5,
+        "gem_list": ["Green", "Purple"],
+        "gem_count": null
+    },
+    {
+        "mission_type": "specific",
+        "payout": 5,
+        "gem_list": ["Green", "Yellow"],
+        "gem_count": null
+    },
+    {
+        "mission_type": "specific",
+        "payout": 5,
+        "gem_list": ["Green", "Pink"],
+        "gem_count": null
+    },
+    {
+        "mission_type": "specific",
+        "payout": 5,
+        "gem_list": ["Purple", "Yellow"],
+        "gem_count": null
+    },
+    {
+        "mission_type": "specific",
+        "payout": 5,
+        "gem_list": ["Purple", "Pink"],
+        "gem_count": null
+    },
+    {
+        "mission_type": "specific",
+        "payout": 5,
+        "gem_list": ["Yellow", "Pink"],
+        "gem_count": null
+    },
+    {
+        "mission_type": "specific",
+        "payout": 5,
+        "gem_list": ["Blue", "Blue"],
+        "gem_count": null
+    },
+    {
+        "mission_type": "specific",
+        "payout": 5,
+        "gem_list": ["Green", "Green"],
+        "gem_count": null
+    },
+    {
+        "mission_type": "specific",
+        "payout": 5,
+        "gem_list": ["Purple", "Purple"],
+        "gem_count": null
+    },
+    {
+        "mission_type": "specific",
+        "payout": 5,
+        "gem_list": ["Yellow", "Yellow"],
+        "gem_count": null
+    },
+    {
+        "mission_type": "specific",
+        "payout": 5,
+        "gem_list": ["Pink", "Pink"],
+        "gem_count": null
+    }
+]

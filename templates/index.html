@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MegaGem</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <div id="screen-menu" class="screen active">
+        <div class="menu-container">
+            <h1 class="game-title">MegaGem</h1>
+                        <div class="menu-gems">
+                <span class="menu-gem gem-pink"></span>
+                <span class="menu-gem gem-green"></span>
+                <span class="menu-gem gem-blue"></span>
+                <span class="menu-gem gem-purple"></span>
+                <span class="menu-gem gem-yellow"></span>
+            </div>
+            <p class="difficulty-label">Choose difficulty</p>
+            <div class="difficulty-buttons">
+                <button class="btn btn-easy" onclick="newGame('easy')">
+                    <span class="btn-label">Easy</span>
+                    <span class="btn-desc">Beginner bots</span>
+                </button>
+                <button class="btn btn-medium" onclick="newGame('medium')">
+                    <span class="btn-label">Medium</span>
+                    <span class="btn-desc">Skilled bots</span>
+                </button>
+                <button class="btn btn-hard" onclick="newGame('hard')">
+                    <span class="btn-label">Hard</span>
+                    <span class="btn-desc">Expert bots</span>
+                </button>
+            </div>
+            <div class="freeplay-divider"><span>or</span></div>
+            <button class="btn btn-freeplay" onclick="toggleFreeplay()">
+                <span class="btn-label">Freeplay</span>
+                <span class="btn-desc">Pick your opponents</span>
+            </button>
+            <div id="freeplay-panel" class="freeplay-panel" style="display:none">
+                <div class="freeplay-selects">
+                    <div class="freeplay-select-group">
+                        <label class="freeplay-label">Bot 1</label>
+                        <select id="freeplay-bot1" class="freeplay-select"></select>
+                    </div>
+                    <div class="freeplay-select-group">
+                        <label class="freeplay-label">Bot 2</label>
+                        <select id="freeplay-bot2" class="freeplay-select"></select>
+                    </div>
+                </div>
+                <button class="btn btn-freeplay-go" onclick="startFreeplay()">Start Game</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="screen-loading" class="screen">
+        <div class="menu-container">
+            <h1 class="game-title">MegaGem</h1>
+            <p class="loading-text">Loading bot models...</p>
+            <div class="spinner"></div>
+        </div>
+    </div>
+
+    <div id="screen-game" class="screen">
+        <div class="game-header">
+            <div class="header-left">
+                <span class="header-title">MegaGem</span>
+                <span id="round-display" class="round-badge">Round 1</span>
+                <span id="difficulty-display" class="difficulty-badge"></span>
+            </div>
+            <div class="header-right">
+                <button class="btn btn-small btn-quit" onclick="backToMenu()">Quit</button>
+            </div>
+        </div>
+
+        <div id="missions-row" class="missions-row"></div>
+
+        <div class="table-middle">
+            <div id="opponent-1" class="player-panel opponent-panel opponent-left"></div>
+            <div class="table-center">
+                <div id="gem-market" class="gem-market"></div>
+                <div id="auction-area" class="auction-area"></div>
+                <div id="round-log" class="round-log"></div>
+            </div>
+            <div id="opponent-2" class="player-panel opponent-panel opponent-right"></div>
+        </div>
+
+        <div id="human-area" class="player-panel human-panel"></div>
+    </div>
+
+    <div id="screen-gameover" class="screen">
+        <div class="gameover-container">
+            <h1 id="gameover-title" class="gameover-title"></h1>
+            <div id="final-scores" class="final-scores"></div>
+            <button class="btn btn-play-again" onclick="backToMenu()">Play Again</button>
+        </div>
+    </div>
+
+    <script src="/static/game.js"></script>
+</body>
+</html>

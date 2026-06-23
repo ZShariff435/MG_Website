@@ -1,0 +1,8 @@
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch
+flask
+gunicorn
+gymnasium
+stable-baselines3
+sb3-contrib
+numpy
