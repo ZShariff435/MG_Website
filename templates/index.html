@@ -10,16 +10,9 @@
 
     <div id="screen-menu" class="screen active">
         <div class="menu-container">
-            <h1 class="game-title">MegaGem</h1>
-                        <div class="menu-gems">
-                <span class="menu-gem gem-pink"></span>
-                <span class="menu-gem gem-green"></span>
-                <span class="menu-gem gem-blue"></span>
-                <span class="menu-gem gem-purple"></span>
-                <span class="menu-gem gem-yellow"></span>
-            </div>
-            <p class="difficulty-label">Choose difficulty</p>
-            <div class="difficulty-buttons">
+            <img src="/static/img/logo.png" alt="MegaGem" class="game-title intro-anim intro-delay-1">
+            <p class="difficulty-label intro-anim intro-delay-2">Choose difficulty</p>
+            <div class="difficulty-buttons intro-anim intro-delay-3">
                 <button class="btn btn-easy" onclick="newGame('easy')">
                     <span class="btn-label">Easy</span>
                     <span class="btn-desc">Beginner bots</span>
@@ -33,8 +26,8 @@
                     <span class="btn-desc">Expert bots</span>
                 </button>
             </div>
-            <div class="freeplay-divider"><span>or</span></div>
-            <button class="btn btn-freeplay" onclick="toggleFreeplay()">
+            <div class="freeplay-divider intro-anim intro-delay-4"><span>or</span></div>
+            <button class="btn btn-freeplay intro-anim intro-delay-4" onclick="toggleFreeplay()">
                 <span class="btn-label">Freeplay</span>
                 <span class="btn-desc">Pick your opponents</span>
             </button>
@@ -52,20 +45,22 @@
                 <button class="btn btn-freeplay-go" onclick="startFreeplay()">Start Game</button>
             </div>
         </div>
+        <footer class="copyright-bar">MegaGem &copy; 2026 Jane Street &nbsp;&middot;&nbsp; Website by Zeeshan Shariff</footer>
     </div>
 
     <div id="screen-loading" class="screen">
         <div class="menu-container">
-            <h1 class="game-title">MegaGem</h1>
+            <img src="/static/img/logo.png" alt="MegaGem" class="game-title">
             <p class="loading-text">Loading bot models...</p>
             <div class="spinner"></div>
         </div>
+        <footer class="copyright-bar">MegaGem &copy; 2026 Jane Street &nbsp;&middot;&nbsp; Website by Zeeshan Shariff</footer>
     </div>
 
     <div id="screen-game" class="screen">
         <div class="game-header">
             <div class="header-left">
-                <span class="header-title">MegaGem</span>
+                <img src="/static/img/logo.png" alt="MegaGem" class="header-title">
                 <span id="round-display" class="round-badge">Round 1</span>
                 <span id="difficulty-display" class="difficulty-badge"></span>
             </div>
@@ -95,6 +90,7 @@
             <div id="final-scores" class="final-scores"></div>
             <button class="btn btn-play-again" onclick="backToMenu()">Play Again</button>
         </div>
+        <footer class="copyright-bar">MegaGem &copy; 2026 Jane Street &nbsp;&middot;&nbsp; Website by Zeeshan Shariff</footer>
     </div>
 
     <script src="/static/game.js"></script>
