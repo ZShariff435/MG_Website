@@ -421,6 +421,7 @@ body {
     flex-direction: column;
     gap: 0.4rem;
     min-height: 0;
+    overflow-y: auto;
 }
 
 .gem-market {
@@ -706,12 +707,27 @@ body {
     opacity: 0.65;
 }
 
-.gem-pink    { background: #c74882; color: #fff; border-color: #a83a6a; }
-.gem-green   { background: #2a8a3a; color: #fff; border-color: #1e6a2a; }
-.gem-blue    { background: #1a6a9a; color: #fff; border-color: #145580; }
-.gem-purple  { background: #6a2a8a; color: #fff; border-color: #551a75; }
-.gem-yellow  { background: #b8860b; color: #fff; border-color: #8a6508; }
-.gem-unknown { background: #2a3a2a; color: #5a6a4a; border-color: #3a4a3a; }
+.gem-card.gem-pink    { background: #1a0d12 url('/static/img/gem_pink.png') center/85% no-repeat; border-color: #a83a6a; }
+.gem-card.gem-green   { background: #0d1a0f url('/static/img/gem_green.png') center/85% no-repeat; border-color: #1e6a2a; }
+.gem-card.gem-blue    { background: #0d131a url('/static/img/gem_blue.png') center/85% no-repeat; border-color: #145580; }
+.gem-card.gem-purple  { background: #150d1a url('/static/img/gem_purple.png') center/85% no-repeat; border-color: #551a75; }
+.gem-card.gem-yellow  { background: #1a170d url('/static/img/gem_yellow.png') center/85% no-repeat; border-color: #8a6508; }
+.gem-card.gem-unknown { background: #2a3a2a; color: #5a6a4a; border-color: #3a4a3a; }
+
+.mission-gem-chip.gem-pink,   .log-gem-chip.gem-pink   { background: #c74882; color: #fff; }
+.mission-gem-chip.gem-green,  .log-gem-chip.gem-green  { background: #2a8a3a; color: #fff; }
+.mission-gem-chip.gem-blue,   .log-gem-chip.gem-blue   { background: #1a6a9a; color: #fff; }
+.mission-gem-chip.gem-purple, .log-gem-chip.gem-purple { background: #6a2a8a; color: #fff; }
+.mission-gem-chip.gem-yellow, .log-gem-chip.gem-yellow { background: #b8860b; color: #fff; }
+
+.gem-label {
+    position: relative;
+    z-index: 1;
+    background: rgba(0,0,0,0.6);
+    padding: 1px 5px;
+    border-radius: 4px;
+    color: #fff;
+}
 
 .gem-card .revealed-badge {
     position: absolute;

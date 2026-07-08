@@ -335,7 +335,7 @@ function renderHumanPlayer(s) {
         }
 
         const onclick = clickable ? `onclick="submitReveal(${c.index})"` : "";
-        html += `<div class="${classes}" ${onclick}>${c.gem_type}${badge}</div>`;
+        html += `<div class="${classes}" ${onclick}><span class="gem-label">${c.gem_type}</span>${badge}</div>`;
     });
     html += '</div></div>';
 
@@ -357,7 +357,7 @@ function renderHumanPlayer(s) {
 function makeGemCard(gemType, sizeClass) {
     const colorClass = GEM_COLORS[gemType] || "gem-unknown";
     const label = gemType || "?";
-    return `<div class="gem-card ${sizeClass} ${colorClass}">${label}</div>`;
+    return `<div class="gem-card ${sizeClass} ${colorClass}"><span class="gem-label">${label}</span></div>`;
 }
 
 /* ── Actions ── */
