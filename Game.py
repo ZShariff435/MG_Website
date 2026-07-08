@@ -57,7 +57,8 @@ class Game:
         return mission_deck[0:4]
 
     def __init__(self, num_players=3, human=False, bot=False, bot_name="megagem_agentv3_2", bot_name_2=None, recurrent=False, recurrent2 = False):
-        if(bot_name_2 == None): 
+        random.seed()
+        if(bot_name_2 == None):
             bot_name_2 = bot_name
         self.gem_deck = self.generate_gem_deck()
         self.auction_deck = self.generate_auction_deck()
