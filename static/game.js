@@ -88,6 +88,7 @@ function backToMenu() {
     sessionId = null;
     gameState = null;
     botsLoaded = false;
+    document.getElementById("freeplay-panel").style.display = "none";
     showScreen("screen-menu");
 }
 
