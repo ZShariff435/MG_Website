@@ -7,14 +7,22 @@ from sb3_contrib.common.wrappers import ActionMasker
 from sb3_contrib.ppo_mask import MaskablePPO
 from sb3_contrib import RecurrentPPO
 
+_model_cache = {}
+
+def _load_model(bot_name, recurrent):
+    key = (bot_name, recurrent)
+    if key not in _model_cache:
+        if recurrent:
+            _model_cache[key] = RecurrentPPO.load(bot_name)
+        else:
+            _model_cache[key] = MaskablePPO.load(bot_name)
+    return _model_cache[key]
+
 class BotPlayer(Player):
 
     def __init__(self, player_no, starting_coins, starting_cards, central, bot_name="megagem_agentv3_2", recurrent=False):
         super().__init__(player_no, starting_coins, starting_cards)
-        if(recurrent):
-            self.model = RecurrentPPO.load(bot_name)
-        else:
-            self.model = MaskablePPO.load(bot_name)
+        self.model = _load_model(bot_name, recurrent)
         self.central = central
         self.recurrent = recurrent
         self.lstm_states = None
