@@ -9,7 +9,7 @@ from sb3_contrib import RecurrentPPO
 
 _model_cache = {}
 
-def _load_model(bot_name, recurrent):
+def load_model(bot_name, recurrent):
     key = (bot_name, recurrent)
     if key not in _model_cache:
         if recurrent:
@@ -22,7 +22,7 @@ class BotPlayer(Player):
 
     def __init__(self, player_no, starting_coins, starting_cards, central, bot_name="megagem_agentv3_2", recurrent=False):
         super().__init__(player_no, starting_coins, starting_cards)
-        self.model = _load_model(bot_name, recurrent)
+        self.model = load_model(bot_name, recurrent)
         self.central = central
         self.recurrent = recurrent
         self.lstm_states = None

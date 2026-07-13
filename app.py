@@ -4,8 +4,11 @@ from threading import Lock
 
 from flask import Flask, request, jsonify, render_template
 
+from concurrent.futures import ThreadPoolExecutor
+
 from Game import Game
 from WebsitePlayer import WebsitePlayer
+from BotPlayer import load_model
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
@@ -46,6 +49,18 @@ BOT_DISPLAY_NAMES = {
     "megagem_agentv5_2_6": "Apex",
     "megagem_agent_antiv5_6": "Zenith",
 }
+
+
+def _preload_difficulty_bots():
+    specs = set()
+    for cfg in DIFFICULTY_MAP.values():
+        specs.add((cfg["bot_name"], cfg["recurrent"]))
+        specs.add((cfg["bot_name_2"], cfg["recurrent2"]))
+    with ThreadPoolExecutor(max_workers=len(specs)) as executor:
+        list(executor.map(lambda spec: load_model(*spec), specs))
+
+
+_preload_difficulty_bots()
 
 
 def get_available_bots():
